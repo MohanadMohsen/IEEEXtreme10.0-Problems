@@ -1,0 +1,41 @@
+#include <iostream>
+
+int t,n,g,e = 0;
+
+using namespace std;
+
+int main()
+{
+    cin >> t;
+    long *output = new long[e];
+    if ( t < 11) {
+    for (int a=0; a < t; ++a) {
+        cin >> g;
+        int num = 0;
+         for (int b=0; b < g; ++b) {
+            cin >> n;
+            long *groub = new long[n];
+            for (int j=0; j < n; ++j) {
+            cin >> groub[j];
+            }
+            for (int c=0; c < n; ++c){
+            if (groub[c] != 1) {
+                for (int h = groub[c]; h > 1; h -=2) {
+                ++num; } }
+            }
+         }
+         if (num % 2 == 0)
+           { output[e] = 0; }
+        else
+          { output[e] = 1; }
+
+        ++e;
+         }
+    }
+    for (int f=0; f < t; ++f)
+        if (output[f] == 0)
+       { cout << "Bob" << endl;}
+    else {
+        cout << "Alice" << endl; }
+    return 0;
+}
